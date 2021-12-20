@@ -1,13 +1,20 @@
 package com.taniltekdemir.springboot.dto;
 
-
-
-public class UserDto {
+public class UserSaveDto {
+    private Long id;
     private String name;
     private String surname;
     private String email;
     private String phone;
     private String username;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

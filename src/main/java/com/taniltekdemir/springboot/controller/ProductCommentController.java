@@ -1,6 +1,7 @@
 package com.taniltekdemir.springboot.controller;
 
 import com.taniltekdemir.springboot.dto.ProductCommentDto;
+import com.taniltekdemir.springboot.dto.ProductCommentSaveDto;
 import com.taniltekdemir.springboot.entity.ProductComment;
 import com.taniltekdemir.springboot.service.ProductCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +28,8 @@ public class ProductCommentController {
         return commentService.fillAllCommentByProductId(productId);
     }
 
-    @PostMapping("")
-    public ResponseEntity<ProductComment> saveProductComment(ProductCommentDto commentDto) {
+    @PostMapping("/saveComment")
+    public ResponseEntity<ProductComment> saveProductComment(@RequestBody ProductCommentSaveDto commentDto) {
         ProductComment productComment = commentService.save(commentDto);
 
         URI uri = ServletUriComponentsBuilder

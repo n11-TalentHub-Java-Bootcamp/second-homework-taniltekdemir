@@ -29,13 +29,13 @@ public class KategoriController {
         return byId;
     }
 
-    @PostMapping("")
+    @PostMapping("/saveCategory")
     public Kategori save(@RequestBody Kategori kategori) {
         Kategori save = kategoriService.save(kategori);
         return save;
     }
 
-    @PostMapping("")
+    @PostMapping("/updateCategory")
     public Kategori update(@RequestBody Kategori kategoriInput) {
         Kategori save = kategoriService.save(kategoriInput);
         return save;
